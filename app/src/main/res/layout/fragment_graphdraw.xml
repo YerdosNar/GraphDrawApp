@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:id="@+id/inputContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Function Input 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="y = "
+                android:textSize="18sp"/>
+
+            <EditText
+                android:id="@+id/function1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Enter function (e.g., x^2)"
+                android:inputType="textNoSuggestions"/>
+
+            <ImageButton
+                android:id="@+id/plotButton1"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@android:drawable/ic_menu_add"
+                android:contentDescription="Plot function"/>
+        </LinearLayout>
+
+        <!-- Function Input 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="y = "
+                android:textSize="18sp"/>
+
+            <EditText
+                android:id="@+id/function2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Enter function (e.g., sin)"
+                android:inputType="textNoSuggestions"/>
+
+            <ImageButton
+                android:id="@+id/plotButton2"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@android:drawable/ic_menu_add"
+                android:contentDescription="Plot function"/>
+        </LinearLayout>
+
+        <!-- Function Input 3 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="y = "
+                android:textSize="18sp"/>
+
+            <EditText
+                android:id="@+id/function3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Enter function (e.g., abs)"
+                android:inputType="textNoSuggestions"/>
+
+            <ImageButton
+                android:id="@+id/plotButton3"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@android:drawable/ic_menu_add"
+                android:contentDescription="Plot function"/>
+        </LinearLayout>
+
+        <!-- Range Controls -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Range: "
+                android:textSize="16sp"/>
+
+            <EditText
+                android:id="@+id/rangeMin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="-10"
+                android:inputType="numberSigned|numberDecimal"
+                android:minWidth="60dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" to "
+                android:textSize="16sp"/>
+
+            <EditText
+                android:id="@+id/rangeMax"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="10"
+                android:inputType="numberSigned|numberDecimal"
+                android:minWidth="60dp"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save to Examples"
+            android:layout_gravity="end"
+            android:layout_marginBottom="16dp"/>
+
+    </LinearLayout>
+
+    <!-- Graph View Container -->
+    <FrameLayout
+        android:id="@+id/graphContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#F0F0F0"
+        app:layout_constraintTop_toBottomOf="@id/inputContainer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
